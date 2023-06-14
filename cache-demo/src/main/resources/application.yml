@@ -1,0 +1,23 @@
+server:
+  port: 8011
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql:///example?characterEncoding=UTF-8&useUnicode=true&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      auto-commit: true
+      max-lifetime: 1800000
+      pool-name: DatebookHikariCP
+      minimum-idle: 5
+      connection-test-query: SELECT 1
+      maximum-pool-size: 15
+      idle-timeout: 300
+  cache:
+    type: redis
+mybatis-plus:
+  global-config:
+    db-config:
+      table-underline: true
